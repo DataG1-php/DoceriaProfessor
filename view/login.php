@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./favicon.png" type="image/png">
-    <title>Doceria Dark Moon - Login</title>
+    <title>Doceria Dark Moon - Login</title>   
     <link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body>
@@ -20,7 +20,7 @@
         </div>
         <div class="menu-horizontal">
             <?php
-                include_once './menulateral.php';
+                include_once 'menusuperior.php';
             ?>
         </div>
         <div class="container">

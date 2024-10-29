@@ -322,19 +322,24 @@ button[name="btnexcluir"] {
 }
 
 .conteudo input[type="date"] {
-    padding: 10px;
-    border: 1px solid #964B00;
-    border-radius: 5px;
-    width: 300px;
-    /*height: 40px;*/
-    font-size: 18px;
-    color: #964B00;
+  padding: 10px;
+  border: 1px solid #964B00; /* Marrom */
+  border-radius: 5px;
+  width: 300px;
+  font-size: 18px;
+  color: #964B00; /* Marrom */
+  background-position: right;
+  background-repeat: no-repeat;
 }
 
-.conteudo input[type="date"]::-webkit-datetime-edit {
-    display: none;
+.conteudo input[type="date"]:focus {
+  border-color: #786C3B; /* Marrom médio */
+  box-shadow: 0 0 10px #786C3B; /* Marrom médio */
 }
 
+.conteudo input[type="date"]:valid {
+  border-color: #964B00; /* Marrom */
+}
 
 .conteudo input[type="number"] {
     padding: 10px;

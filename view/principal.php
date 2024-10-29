@@ -22,11 +22,11 @@
     </div>
     <div class="menu-horizontal">
         <?php
-            include_once './menulateral.php';
+            include_once 'menusuperior.php';
         ?>
     </div>
     <div class="container">
-      <div class="menu-lateral">         
+      <div class="menu-lateral">
           <?php
             include_once './menu.php';
           ?>
