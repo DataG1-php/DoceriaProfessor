@@ -1,0 +1,369 @@
+body {
+margin: 0;
+padding: 0;
+font-family: Arial, sans-serif;
+background-color: #fff; /* Branco */
+}
+
+.geral {
+max-width: 1200px;
+margin: 0 auto;
+padding: 20px;
+background-color: #fff; 
+border: 0px solid #964B00;
+}
+
+.topo {
+height: auto;
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color: #fff; 
+color: #964B00; 
+padding: 1px;
+border-bottom: 1px solid #964B00;
+}
+
+.conteudo h2{
+    color: #964B00;
+}
+
+.logo {
+width: 450px;
+height: 200px;
+margin: 0px;
+border: 0px solid #964B00; /* Marrom */
+position: relative;
+}
+
+.logo img {
+width: 100%;
+height: 100%;
+object-fit: contain;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-65%, -50%);
+}
+
+.texto-topo {
+margin: 20px;
+text-align: right;
+}
+
+.texto-topo h1 {
+font-size: 36px;
+margin-bottom: 10px;
+color: #964B00; /* Marrom */
+}
+
+.texto-topo p {
+font-size: 18px;
+color: #786C3B; /* Marrom médio */
+}
+
+.menu-horizontal ul {
+list-style: none;
+margin: 0px;
+padding: 10px;
+display: flex;
+justify-content: right;
+background-color: #fff;
+border: 0px solid #964B00;
+}
+
+.menu-horizontal li {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 30px; /* Altura do menu */
+}
+
+.menu-horizontal a {
+color: #964B00; /* Marrom */
+text-decoration: none;
+transition: 0.2s;
+padding: 10px;
+}
+
+.menu-horizontal a:hover {
+background-color: #786C3B; /* Marrom médio */
+color: #fff;
+padding: 10px;
+border-radius: 5px;
+}
+
+.container {
+display: flex;
+}
+
+.menu-lateral {
+width: 200px;
+background-color: #fff;
+border: 1px solid #964B00;
+padding: 20px;
+height: 280px;
+}
+
+.menu-lateral ul {
+list-style: none;
+margin: 0;
+padding:0px;
+}
+
+.menu-lateral li {
+padding: 13px;
+border-bottom: 1px solid #964B00; /* Marrom */
+}
+
+.menu-lateral a {
+color: #964B00; /* Marrom */
+text-decoration: none;
+transition: 0.1s;
+}
+
+.menu-lateral a:hover {
+background-color: #786C3B; /* Marrom médio */
+color: #fff;
+padding: 10px;
+border-radius: 5px;
+}
+
+.conteudo {
+padding: 20px;
+margin-left: 20px; /* Espaço entre menu e conteúdo */
+height: auto;
+}
+
+.rodape {
+background-color: #fff;
+color: #964B00;
+padding: 5px;
+text-align: center;
+clear: both;
+border-top: 1px solid #964B00;
+margin-top: 10px;
+}
+
+table {
+width: 100%;
+border-collapse: collapse;
+border: 1px solid #964B00; /* Marrom */
+margin: 0 auto;
+}
+
+th, td {
+padding: 10px;
+text-align: left;
+border-left: 1px solid #fff; 
+border-right: 1px solid #fff; 
+border-bottom: 1px solid #964B00;
+}
+
+th {
+background-color: #964B00;
+color: #fff;
+}
+
+tr:nth-child(even) {
+background-color: #F5DEDE; /* Marrom claro */
+}
+
+tr:nth-child(odd) {
+background-color: #F9F9F9; /* Fundo claro */
+}
+
+.conteudo form {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.conteudo label {
+  font-size: 18px;
+  color: #964B00; /* Marrom */
+  margin-bottom: 10px;
+}
+
+.conteudo input[type="text"] {
+  padding: 10px;
+  border: 1px solid #964B00; /* Marrom */
+  border-radius: 5px;
+  width: 300px;
+}
+
+.conteudo input[type="submit"] {
+  background-color: #964B00; /* Marrom */
+  color: #fff;
+  width: 100px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+  height: 40px;
+}
+
+.conteudo input[type="submit"]:hover {
+  background-color: #786C3B; /* Marrom médio */
+}
+
+.conteudo input[type="submit"]:hover {
+  background-color: #786C3B; /* Marrom médio */
+}
+
+.conteudo input[type="reset"] {
+  background-color: #fff;
+  color: #964B00; /* Marrom */
+  padding: 10px 20px;
+  border: 1px solid #964B00; /* Marrom */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100px;
+}
+
+.conteudo input[type="reset"]:hover {
+  background-color: #F5DEDE; /* Marrom claro */
+}
+
+.conteudo button[name="btncadingrediente"] {
+  background-color: #fff;
+  color: #964B00; /* Marrom */
+  padding: 10px 20px;
+  border: 1px solid #964B00; /* Marrom */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.conteudo button[name="btncadingrediente"]:hover {
+  background-color: #F5DEDE; /* Marrom claro */
+}
+
+.conteudo button[name="btncadastrar"] {
+  background-color: #964B00; /* Marrom */
+  color: #fff;
+  width: 100px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+  height: 40px;
+}
+
+.conteudo button[name="btncadastrar"]:hover {
+  background-color: #786C3B; /* Marrom médio */
+}
+
+
+.conteudo button[name="btnalterar"] {
+  background-color: #fff;
+  color: #964B00; /* Marrom */
+  padding: 5px 10px;
+  border: 1px solid #964B00; /* Marrom */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.conteudo button[name="btnalterar"]:hover {
+  background-color: #F5DEDE; /* Marrom claro */
+}
+
+.conteudo button[name="btnexcluir"] {
+  background-color: #fff;
+  color: #964B00; /* Marrom */
+  padding: 5px 10px;
+  border: 1px solid #964B00; /* Marrom */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.conteudo button[name="btnexcluir"]:hover {
+  background-color: #F5DEDE; /* Marrom claro */
+}
+
+button[name="btnalterar"] {
+  margin: 0 auto;
+  display: block;
+}
+
+button[name="btnexcluir"] {
+  margin: 0 auto;
+  display: block;
+}
+
+.conteudo input[type="image"] {
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+}
+
+.conteudo select {
+    padding: 10px;
+    border: 1px solid #964B00;
+    border-radius: 5px;
+    width: 320px;
+    height: 40px;
+    font-size: 18px;
+    color: #964B00;
+}
+
+.conteudo input[type="date"] {
+    padding: 10px;
+    border: 1px solid #964B00;
+    border-radius: 5px;
+    width: 300px;
+    /*height: 40px;*/
+    font-size: 18px;
+    color: #964B00;
+}
+
+.conteudo input[type="date"]::-webkit-datetime-edit {
+    display: none;
+}
+
+
+.conteudo input[type="number"] {
+    padding: 10px;
+    border: 1px solid #964B00;
+    border-radius: 5px;
+    width: 300px;
+    /*height: 40px;*/
+    font-size: 18px;
+    color: #964B00;
+    text-align: right;
+}
+
+.conteudo input[type="number"]:focus {
+    outline: none;
+}
+
+.conteudo input[type="number"]::placeholder {
+    color: #ccc;
+    font-size: 18px;
+}
+
+.conteudo table[id="tabela-itens"]{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.conteudo input[type="password"] {
+    padding: 10px;
+    border: 1px solid #964B00;
+    border-radius: 5px;
+    width: 300px;
+}
