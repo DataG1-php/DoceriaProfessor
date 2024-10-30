@@ -55,7 +55,7 @@
                     <tbody>
                         <!-- Dados da listagem -->
                         <?php
-                            include_once '../model/database/ReceitaDAO.php.php';
+                            include_once '../model/database/ReceitaDAO.php';
                             $dao = new ReceitaDAO();
                             $lista = $dao->list();
                             foreach ($lista as $value) {
