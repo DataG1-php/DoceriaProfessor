@@ -36,7 +36,7 @@
       </div>      
       <div class="conteudo">
           <h2>Cadastro de receitas</h2>
-          <form action="#" method="post">
+          <form action="../controller/receitaBO.php" method="post">
           <label>Nome:</label>
           <input type="text" name="txtnome"><br><br>
           <input type="hidden" name="acao" value="inserir"/>

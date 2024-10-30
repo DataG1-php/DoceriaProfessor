@@ -8,7 +8,14 @@
     <?php
         include_once '../model/Login.php';
         Login::verificaSessao();
-    ?>    
+    ?>
+  <script type="text/javascript">
+      function deletar(idingredientes){
+          if(confirm('Deseja excluir o registro?')){
+              document.location.href='../controller/receitaBO.php?acao=deletar&idreceita='+idreceita;
+          }
+      }
+  </script>    
     <link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body>
@@ -47,17 +54,25 @@
                     </thead>
                     <tbody>
                         <!-- Dados da listagem -->
+                        <?php
+                            include_once '../model/database/ReceitaDAO.php.php';
+                            $dao = new ReceitaDAO();
+                            $lista = $dao->list();
+                            foreach ($lista as $value) {
+                        ?>
                         <tr>
-                            <td>1</td>
-                            <td>Receita 1</td>
-                            <td>Descrição da receita 1</td>
+                            <td><?php echo $value->idreceita;?></td>
+                            <td><?php echo $value->nome;?></td>                           
                             <td>
                                 <button name="btnalterar" onclick="location.href='updreceita.php'">Alterar</button>
                             </td>
                             <td>
-                                <button name="btnexcluir">Excluir</button>
+                                <button name="btnexcluir" onclick="javascript:deletar(<?php echo $value->idreceita;?>)">Excluir</button>
                             </td>
                         </tr>
+                    <?php
+                        }
+                    ?>                        
                     </tbody>
                 </table>
                 <button style="float: right" name="btncadingrediente" onclick="location.href='cadreceita.php'">Cadastrar</button>
