@@ -10,7 +10,7 @@
         Login::verificaSessao();
     ?>
   <script type="text/javascript">
-      function deletar(idingredientes){
+      function deletar(idreceita){
           if(confirm('Deseja excluir o registro?')){
               document.location.href='../controller/receitaBO.php?acao=deletar&idreceita='+idreceita;
           }
@@ -64,7 +64,7 @@
                             <td><?php echo $value->idreceita;?></td>
                             <td><?php echo $value->nome;?></td>                           
                             <td>
-                                <button name="btnalterar" onclick="location.href='updreceita.php'">Alterar</button>
+                                <button name="btnalterar" onclick="location.href='updreceita.php?idreceita=<?php echo $value->idreceita;?>'">Alterar</button>
                             </td>
                             <td>
                                 <button name="btnexcluir" onclick="javascript:deletar(<?php echo $value->idreceita;?>)">Excluir</button>

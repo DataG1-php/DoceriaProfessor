@@ -47,7 +47,7 @@
           <label>Nome:</label>
           <input type="text" name="txtnome" value="<?php echo $value->nome;?>"><br><br>
           <input type="hidden" name="acao" value="alterar"/>
-          <input type="hidden" name="idingredientes" value="<?php echo $value->idreceita;?>"/>
+          <input type="hidden" name="idreceita" value="<?php echo $value->idreceita;?>"/>
           <input type="submit" name="btnCadastrar" value="Alterar"/>
           <input type="reset" name="btnLimpar" value="Limpar"/>
         <?php 
