@@ -40,8 +40,8 @@
           <?php
             include_once '../model/database/ReceitaDAO.php';
             $dao = new ReceitaDAO();
-            $id = $_GET['idreceita'];
-            $lista = $dao->list($id);
+            $id = $_GET['idreceita']; //recebido para ter apenas 1 item
+            $lista = $dao->list($id); //vai o id para filtrar
             foreach ($lista as $value) {
           ?>
           <label>Nome:</label>
