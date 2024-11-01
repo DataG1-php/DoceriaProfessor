@@ -8,7 +8,14 @@
     <?php
         include_once '../model/Login.php';
         Login::verificaSessao();
-    ?>    
+    ?>
+    <script type="text/javascript">
+        function deletar(iditem){
+            if(confirm('Deseja excluir o registro?')){
+                document.location.href='../controller/itemBO.php?acao=deletar&iditem='+iditem;
+            }
+        }
+    </script>    
     <link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body>
@@ -38,10 +45,11 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Receita</th>
+                            <th>ID</th> 
+                            <th>Item</th>
                             <th>Ingrediente</th>
-                            <th>Quantidade</th>
+                            <th>Validade</th>
+                            <th>Valor</th>
                             <th></th>
                             <th></th>
                         </tr>
@@ -53,6 +61,7 @@
                             <td>Receita 1</td>
                             <td>Ingrediente 1</td>
                             <td>10</td>
+                            <td></td>
                             <td>
                                 <button name="btnalterar" onclick="location.href='upditem.php'">Alterar</button>
                             </td>

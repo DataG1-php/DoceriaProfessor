@@ -9,6 +9,7 @@
         include_once '../model/Login.php';
         Login::verificaSessao();
     ?>
+    
     <link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body>
@@ -35,16 +36,25 @@
             </div>
             <div class="conteudo">
                 <h2>Cadastro de Itens para receita</h2>
-                <form>
+                <form action="../controller/itemBO.php" method="post">
                     <label for="combo">Selecione um ingrediente:</label>
                     <select id="combo" name="combo">
-                        <option value="opcao1">Opção 1</option>
-                        <option value="opcao2">Opção 2</option>
-                        <option value="opcao3">Opção 3</option>
+                    <?php
+                        include_once '../model/database/IngredienteDAO.php';
+                        $dao = new IngredienteDAO();
+                        $array = $dao->list();
+                        foreach ($array as $value) {
+                    ?>
+                        <option value="<?php echo $value->idingredientes;?>">
+                            <?php echo $value->descricao;?>
+                        </option>
+                    <?php 
+                        }
+                    ?>
                     </select>
                     <br><br>
                     <label for="texto">Nome do item:</label>
-                    <input type="text" id="texto" name="texto">
+                    <input type="text" id="texto" name="txtnome">
                     <br><br>
                     <label for="data">Data de validade:</label>
                     <input type="date" id="data" name="data">
@@ -52,6 +62,7 @@
                     <label for="valor">Valor:</label>
                     <input type="number" id="valor" name="valor" placeholder="R$ 0,00">
                     <br><br>
+                    <input type="hidden" name="acao" value="inserir">
                     <input type="submit" value="Cadastrar">
                     <input type="reset" value="Limpar">
                 </form>
