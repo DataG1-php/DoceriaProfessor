@@ -60,7 +60,7 @@
                     <input type="date" id="data" name="data">
                     <br><br>
                     <label for="valor">Valor:</label>
-                    <input type="number" id="valor" name="valor" placeholder="R$ 0,00">
+                    <input type="number" id="valor" step="0.01" name="valor" placeholder="R$ 0,00">
                     <br><br>
                     <input type="hidden" name="acao" value="inserir">
                     <input type="submit" value="Cadastrar">

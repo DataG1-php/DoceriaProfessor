@@ -35,38 +35,40 @@
             </div>
             <div class="conteudo">
                 <h2>Cadastro de itens para receita</h2>
-                <form id="formulario">
+                <form id="formulario" action="../controller/itemReceitaBO.php" method="post">
                     <label for="receita">Selecione uma receita:</label>
-                    <select id="receita" name="receita">
-                        <option value="opcao1">Opção 1</option>
-                        <option value="opcao2">Opção 2</option>
-                        <option value="opcao3">Opção 3</option>
+                    <select id="receita" name="cbxreceita">
+                        <?php
+                            include_once '../model/database/ReceitaDAO.php';
+                            $dao = new ReceitaDAO();
+                            $lista = $dao->list();
+                            foreach ($lista as $value) {
+                        ?>
+                        <option value="<?php echo $value->idreceita;?>"><?php echo $value->nome;?></option>
+                        <?php
+                            }
+                        ?>
                     </select>
                     <br><br>
                     <label for="item">Selecione um item:</label>
-                    <select id="item" name="item">
-                        <option value="opcao1">Opção 1</option>
-                        <option value="opcao2">Opção 2</option>
-                        <option value="opcao3">Opção 3</option>
+                    <select id="item" name="cbxitem">
+                        <?php
+                            include_once '../model/database/ItemDAO.php';
+                            $dao = new ItemDAO();
+                            $listaitem = $dao->list();
+                            foreach ($listaitem as $valueItem) {
+                        ?>                          
+                        <option value="<?php echo $valueItem->iditem;?>"><?php echo $valueItem->nome;?></option>
+                        <?php 
+                            }
+                        ?>
                     </select>
                     <br><br>
                     <label for="quantidade">Quantidade:</label>
                     <input type="number" id="quantidade" name="quantidade">
                     <br><br>
-                    <button type="button" name="btncadastrar">Adicionar</button>
-                    <table id="tabela-itens">
-                        <thead>
-                            <tr>
-                                <th>Item</th>
-                                <th>Quantidade</th>
-                                <th>Ações</th>
-                            </tr>
-                        </thead>
-                        <tbody id="lista-itens">
-                            <!-- Itens serão adicionados dinamicamente aqui -->
-                        </tbody>
-                    </table>
-                    <button type="submit" id="enviar" name="btncadastrar" style="display: none;">Cadastrar</button>
+                    <button type="submit" name="btncadastrar">Cadastrar</button>
+                    <input type="hidden" name="acao" value="inserir"/>
                 </form>
             </div>
         </div>
@@ -74,57 +76,5 @@
             <p>&copy; 2023 Doceria Dark Moon. Todos os direitos reservados.</p>
         </div>
     </div>
-
-    <script>
-        window.addEventListener('load', () => {
-            const listaItens = document.getElementById('lista-itens');
-            const formulario = document.getElementById('formulario');
-            const botaoEnviar = document.getElementById('enviar');
-
-            function adicionarItem(item, quantidade) {
-                const linha = document.createElement('tr');
-                linha.innerHTML = `
-                    <td>${item}</td>
-                    <td>${quantidade}</td>
-                    <td>
-                        <button class="excluir" name="btnexcluir" data-item="${item}">Excluir</button>
-                    </td>
-                `;
-
-                linha.querySelector('.excluir').addEventListener('click', () => {
-                    listaItens.removeChild(linha);
-                    verificarItens();
-                });
-
-                listaItens.appendChild(linha);
-                verificarItens();
-            }
-
-            function verificarItens() {
-                if (listaItens.childElementCount > 0) {
-                    botaoEnviar.style.display = 'block';
-                } else {
-                    botaoEnviar.style.display = 'none';
-                }
-            }
-
-            document.querySelector('button[name="btncadastrar"]').addEventListener('click', (e) => {
-                const item = document.getElementById('item').value;
-                const quantidade = document.getElementById('quantidade').value;
-
-                if (item && quantidade) {
-                    adicionarItem(item, quantidade);
-                    document.getElementById('item').value = '';
-                    document.getElementById('quantidade').value = '';
-                }
-            });
-
-            formulario.addEventListener('submit', (e) => {
-                e.preventDefault();
-                // Enviar dados para backend aqui
-                console.log('Enviar dados para backend');
-            });
-        });
-    </script>
 </body>
 </html>

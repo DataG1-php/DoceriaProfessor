@@ -46,10 +46,10 @@ if (isset($_REQUEST['acao'])){
             }
             break;
         case 'alterar':
-            if (isset($_POST['combo']) && 
-                isset($_POST['txtnome'])&&
+            if (isset($_POST['txtnome'])&&
                 !empty($_POST['txtnome'])&&
                 isset($_POST['data'])&&
+                !empty($_POST['data'])&&
                 isset($_POST['valor'])&&
                 isset($_POST['iditem'])){
                 
@@ -58,9 +58,9 @@ if (isset($_REQUEST['acao'])){
                 $objeto->nome = $_POST['txtnome'];
                 $objeto->validade = $_POST['data'];
                 $objeto->valor = $_POST['valor'];
-                $objeto->idingredientes = $_POST['combo'];
                 $objeto->iditem = $_POST['iditem'];
-                
+                $objeto->idingredientes = $_POST['idingredientes'];
+                //echo $dao->update($objeto);
                     if($dao->update($objeto)){
                     ?>
                         <script type="text/javascript">
@@ -89,17 +89,20 @@ if (isset($_REQUEST['acao'])){
             if (isset($_GET['iditem'])){
                 $dao = new ItemDAO();
                 $id = $_GET['iditem'];
-                if($dao->delete($id)){
+                try{
+                    if($dao->delete($id)){
+                        ?>
+                        <script type="text/javascript">
+                            alert('Item excluído com sucesso.');
+                            location.href = '../view/listaitens.php';
+                        </script>
+                        <?php
+                    }    
+                }
+                catch (Exception $exc) {
                     ?>
                     <script type="text/javascript">
-                        alert('Item excluído com sucesso.');
-                        location.href = '../view/listaitens.php';
-                    </script>
-                    <?php
-                }else{
-                    ?>
-                    <script type="text/javascript">
-                        alert('Problema ao excluir o item.');
+                        alert('Problema ao excluir o item.\nHá um registro filho localizado.');
                         history.go(-1);
                     </script>
                     <?php

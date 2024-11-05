@@ -3,12 +3,36 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/DoceriaProfessor/controller/itemBO.php</file>
-            <file>file:/C:/xampp/htdocs/DoceriaProfessor/model/database/ItemDAO.php</file>
-            <file>file:/C:/xampp/htdocs/DoceriaProfessor/view/cadItem.php</file>
-            <file>file:/C:/xampp/htdocs/DoceriaProfessor/model/Item.php</file>
-            <file>file:/C:/xampp/htdocs/DoceriaProfessor/view/listaitens.php</file>
-            <file>file:/C:/xampp/htdocs/DoceriaProfessor/view/listaingredientes.php</file>
+            <file>file:/C:/Users/10086699/Documents/Meus_arquivos/Senac/PHP/xampp/htdocs/projetos/Doceria/model/database/ReceitaDAO.php</file>
+            <file>file:/C:/Users/10086699/Documents/Meus_arquivos/Senac/PHP/xampp/htdocs/projetos/Doceria/view/listaingredientes.php</file>
+            <file>file:/C:/Users/10086699/Documents/Meus_arquivos/Senac/PHP/xampp/htdocs/projetos/Doceria/model/Login.php</file>
+            <file>file:/C:/Users/10086699/Documents/Meus_arquivos/Senac/PHP/xampp/htdocs/projetos/Doceria/model/database/DB.php</file>
+            <file>file:/C:/Users/10086699/Documents/Meus_arquivos/Senac/PHP/xampp/htdocs/projetos/Doceria/view/cadingrediente.php</file>
+            <file>file:/C:/Users/10086699/Documents/Meus_arquivos/Senac/PHP/xampp/htdocs/projetos/Doceria/model/database/IngredienteDAO.php</file>
+            <file>file:/C:/Users/10086699/Documents/Meus_arquivos/Senac/PHP/xampp/htdocs/projetos/Doceria/view/cadItemReceita.php</file>
+            <file>file:/C:/Users/10086699/Documents/Meus_arquivos/Senac/PHP/xampp/htdocs/projetos/Doceria/controller/itemBO.php</file>
+            <file>file:/C:/Users/10086699/Documents/Meus_arquivos/Senac/PHP/xampp/htdocs/projetos/Doceria/view/updreceita.php</file>
+            <file>file:/C:/Users/10086699/Documents/Meus_arquivos/Senac/PHP/xampp/htdocs/projetos/Doceria/controller/loginBO.php</file>
+            <file>file:/C:/Users/10086699/Documents/Meus_arquivos/Senac/PHP/xampp/htdocs/projetos/Doceria/view/updItemReceita.php</file>
+            <file>file:/C:/Users/10086699/Documents/Meus_arquivos/Senac/PHP/xampp/htdocs/projetos/Doceria/view/menu.php</file>
+            <file>file:/C:/Users/10086699/Documents/Meus_arquivos/Senac/PHP/xampp/htdocs/projetos/Doceria/view/listareceita.php</file>
+            <file>file:/C:/Users/10086699/Documents/Meus_arquivos/Senac/PHP/xampp/htdocs/projetos/Doceria/css/estilo.css</file>
+            <file>file:/C:/Users/10086699/Documents/Meus_arquivos/Senac/PHP/xampp/htdocs/projetos/Doceria/view/cadreceita.php</file>
+            <file>file:/C:/Users/10086699/Documents/Meus_arquivos/Senac/PHP/xampp/htdocs/projetos/Doceria/view/listaitemreceita.php</file>
+            <file>file:/C:/Users/10086699/Documents/Meus_arquivos/Senac/PHP/xampp/htdocs/projetos/Doceria/controller/ingredienteBO.php</file>
+            <file>file:/C:/Users/10086699/Documents/Meus_arquivos/Senac/PHP/xampp/htdocs/projetos/Doceria/view/listaitens.php</file>
+            <file>file:/C:/Users/10086699/Documents/Meus_arquivos/Senac/PHP/xampp/htdocs/projetos/Doceria/model/database/ItemReceitaDAO.php</file>
+            <file>file:/C:/Users/10086699/Documents/Meus_arquivos/Senac/PHP/xampp/htdocs/projetos/Doceria/model/database/ItemDAO.php</file>
+            <file>file:/C:/Users/10086699/Documents/Meus_arquivos/Senac/PHP/xampp/htdocs/projetos/Doceria/view/principal.php</file>
+            <file>file:/C:/Users/10086699/Documents/Meus_arquivos/Senac/PHP/xampp/htdocs/projetos/Doceria/model/ItemReceita.php</file>
+            <file>file:/C:/Users/10086699/Documents/Meus_arquivos/Senac/PHP/xampp/htdocs/projetos/Doceria/model/Item.php</file>
+            <file>file:/C:/Users/10086699/Documents/Meus_arquivos/Senac/PHP/xampp/htdocs/projetos/Doceria/controller/itemReceitaBO.php</file>
+            <file>file:/C:/Users/10086699/Documents/Meus_arquivos/Senac/PHP/xampp/htdocs/projetos/Doceria/view/menusuperior.php</file>
+            <file>file:/C:/Users/10086699/Documents/Meus_arquivos/Senac/PHP/xampp/htdocs/projetos/Doceria/view/cadItem.php</file>
+            <file>file:/C:/Users/10086699/Documents/Meus_arquivos/Senac/PHP/xampp/htdocs/projetos/Doceria/controller/logoutBO.php</file>
+            <file>file:/C:/Users/10086699/Documents/Meus_arquivos/Senac/PHP/xampp/htdocs/projetos/Doceria/view/updingredientes.php</file>
+            <file>file:/C:/Users/10086699/Documents/Meus_arquivos/Senac/PHP/xampp/htdocs/projetos/Doceria/index.php</file>
+            <file>file:/C:/Users/10086699/Documents/Meus_arquivos/Senac/PHP/xampp/htdocs/projetos/Doceria/view/updItem.php</file>
         </group>
     </open-files>
 </project-private>

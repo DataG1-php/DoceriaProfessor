@@ -35,24 +35,34 @@
             </div>
             <div class="conteudo">
                 <h2>Alteração de Itens para receita</h2>
-                <form>
-                    <label for="combo">Selecione um ingrediente:</label>
-                    <select id="combo" name="combo">
-                        <option value="opcao1">Opção 1</option>
-                        <option value="opcao2">Opção 2</option>
-                        <option value="opcao3">Opção 3</option>
-                    </select>
+                <form action="../controller/itemBO.php" method="post">
+                    <?php 
+                        include_once '../model/database/ItemDAO.php';
+                        $dao = new ItemDAO();
+                        $lista = $dao->list($_REQUEST['iditem']);
+                        foreach ($lista as $value) {
+                    ?>
+                    <label>Ingrediente selecionado:</label>
+                    <input type="text" name="txtingrediente" value="<?php echo $value->descricao;?>" disabled/>
+                    
                     <br><br>
                     <label for="texto">Nome do item:</label>
-                    <input type="text" id="texto" name="texto">
+                    <input type="text" id="texto" name="txtnome" value="<?php echo $value->nome;?>">
                     <br><br>
                     <label for="data">Data de validade:</label>
-                    <input type="date" id="data" name="data">
+                    <input type="date" id="data" name="data" value="<?php echo $value->validade;?>">
                     <br><br>
                     <label for="valor">Valor:</label>
-                    <input type="number" id="valor" name="valor" placeholder="R$ 0,00">
+                    <input type="number" id="valor" name="valor" step="0.01" value="<?php echo $value->valor;?>" placeholder="R$ 0,00">
                     <br><br>
-                    <input type="submit" value="ALterar">
+                    <input type="hidden" name="acao" value="alterar"/>
+                    <input type="hidden" name="iditem" value="<?php echo $value->iditem;?>"/>
+                    <input type="hidden" name="idingredientes" value="<?php echo $value->idingredientes;?>"/>
+                    <?php 
+                        }
+                    ?>
+                    <br/>
+                    <input type="submit" value="Alterar">
                     <input type="reset" value="Limpar">
                 </form>
             </div>

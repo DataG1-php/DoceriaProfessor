@@ -18,6 +18,12 @@ class Item {
     public function __set($name, $value) {
         $this->$name = $value;
     }
+    
+    public function getIditem() {
+        return $this->iditem;
+    }
+
+
 }
 
 ?>

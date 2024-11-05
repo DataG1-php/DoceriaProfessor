@@ -7,7 +7,7 @@ class ItemDAO {
     public function list($id = null) {
         $where = ($id ? "where it.iditem = $id":"");
         $query = "select it.iditem, it.nome, ig.descricao, 
-            it.validade, it.valor from ingredientes ig 
+            it.validade, it.valor, ig.idingredientes from ingredientes ig 
             INNER JOIN item it ON it.idingredientes = 
             ig.idingredientes $where";
         $conn = DB::getInstancia()->query($query);
@@ -30,18 +30,12 @@ class ItemDAO {
     }
     
     public function update(Item $obj) {
-        $query = "UPDATE item SET "
-                . "nome = :pnome,"
-                . "validade = :pvalidade,"
-                . "valor = :pvalor,"
-                . "idingredientes = :pidingredientes "
-                . "WHERE iditem = :piditem";
+        $query = "UPDATE item SET nome = '$obj->nome', validade = '$obj->validade', valor = $obj->valor, idingredientes = $obj->idingredientes WHERE iditem = $obj->iditem";
+        
         $conn = DB::getInstancia()->prepare($query);
-        $conn->execute(array(':pnome'=>$obj->nome,
-                             ':pvalidade'=>$obj->validade,
-                             ':pvalor'=>$obj->valor,
-                             ':pidingredientes'=>$obj->idingredientes,
-                             ':piditem'=>$obj->iditem));
+                
+        $conn->execute();
+                            
         return $conn->rowCount()>0;
     }
     

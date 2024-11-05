@@ -8,7 +8,14 @@
     <?php
         include_once '../model/Login.php';
         Login::verificaSessao();
-    ?>    
+    ?>
+    <script type="text/javascript">
+        function deletar(iditem,idreceita){
+            if(confirm('Deseja excluir o registro?')){
+                document.location.href='../controller/itemReceitaBO.php?acao=deletar&iditem='+iditem+'&idreceita='+idreceita;
+            }
+        }
+    </script>     
     <link rel="stylesheet" href="../css/estilo.css">
 </head>
 <body>
@@ -44,9 +51,15 @@
                     </thead>
                     <tbody id="lista-receitas">
                         <!-- Receitas serão adicionadas dinamicamente aqui -->
+                        <?php
+                            include_once '../model/database/ItemReceitaDAO.php';
+                            $dao = new ItemReceitaDAO();
+                            $listareceita = $dao->list();
+                            foreach ($listareceita as $valuereceita) {
+                        ?>
                         <tr>
-                            <td>1</td>
-                            <td>Receita 1</td>
+                            <td><?php echo $valuereceita->idreceita;?></td>
+                            <td><?php echo $valuereceita->receita;?></td>
                             <td>
                                 <table id="tabela-itens-receita">
                                     <thead>
@@ -58,20 +71,32 @@
                                     </thead>
                                     <tbody id="lista-itens-receita">
                                         <!-- Itens serão adicionados dinamicamente aqui -->
+                                        <?php
+                                            include_once '../model/database/ItemDAO.php';
+                                            $dao = new ItemDAO();
+                                            $listaitem = $dao->list($valuereceita->iditem);
+                                            foreach ($listaitem as $valueItem) {
+                                        ?>                                        
                                         <tr>
-                                            <td>Item 1</td>
-                                            <td>10</td>
+                                            <td><?php echo $valueItem->nome;?></td>
+                                            <td><?php echo $valuereceita->quantidade;?></td>
                                             <td>
-                                                <button class="excluir" name="btnexcluir" data-item="Item 1">Excluir</button>
+                                                <button class="excluir" name="btnexcluir" data-item="Item 1" onclick="javascript:deletar(<?php echo $valuereceita->iditem;?>,<?php echo $valuereceita->idreceita;?>)">Excluir</button>
                                             </td>
                                         </tr>
+                                        <?php
+                                            }
+                                        ?>
                                     </tbody>
                                 </table>
                             </td>
                             <td>
-                                <button name="btnalterar" data-receita="Receita 1" onclick="location.href='updItemReceita.php'">Alterar</button>
+                                <button name="btnalterar" data-receita="Receita 1" onclick="location.href='updItemReceita.php?idreceita=<?php echo $valuereceita->idreceita;?>'">Alterar</button>
                             </td>
                         </tr>
+                    <?php 
+                            }
+                    ?>
                     </tbody>
                 </table>
                 <button style="float: right" name="btncadingrediente" onclick="location.href='cadItemReceita.php'">Cadastrar</button>

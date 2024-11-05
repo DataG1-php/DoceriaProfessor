@@ -56,19 +56,29 @@
                     </thead>
                     <tbody>
                         <!-- Dados da listagem -->
+                        <?php
+                            include_once '../model/database/ItemDAO.php';
+                            $dao = new ItemDAO();
+                            $lista = $dao->list();
+                            foreach ($lista as $value) {
+                                
+                        ?>
                         <tr>
-                            <td>1</td>
-                            <td>Receita 1</td>
-                            <td>Ingrediente 1</td>
-                            <td>10</td>
-                            <td></td>
+                            <td><?php echo $value->iditem;?></td>
+                            <td><?php echo $value->nome;?></td>
+                            <td><?php echo $value->descricao;?></td>
+                            <td><?php echo $value->validade;?></td>
+                            <td><?php echo $value->valor;?></td>
                             <td>
-                                <button name="btnalterar" onclick="location.href='upditem.php'">Alterar</button>
+                                <button name="btnalterar" onclick="location.href='upditem.php?iditem=<?php echo $value->iditem;?>'">Alterar</button>
                             </td>
                             <td>
-                                <button name="btnexcluir">Excluir</button>
+                                <button name="btnexcluir" onclick="javascript:deletar(<?php echo $value->iditem;?>)">Excluir</button>
                             </td>
                         </tr>
+                        <?php
+                            }
+                        ?>
                     </tbody>
                 </table>
                 <button style="float: right" name="btncadingrediente" onclick="location.href='cadItem.php'">Cadastrar item</button>
