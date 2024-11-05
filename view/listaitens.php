@@ -67,8 +67,8 @@
                             <td><?php echo $value->iditem;?></td>
                             <td><?php echo $value->nome;?></td>
                             <td><?php echo $value->descricao;?></td>
-                            <td><?php echo $value->validade;?></td>
-                            <td><?php echo $value->valor;?></td>
+                            <td><?php echo date("d/m/Y", strtotime($value->validade));?></td>
+                            <td><?php echo number_format($value->valor,2,',');?></td>
                             <td>
                                 <button name="btnalterar" onclick="location.href='upditem.php?iditem=<?php echo $value->iditem;?>'">Alterar</button>
                             </td>
