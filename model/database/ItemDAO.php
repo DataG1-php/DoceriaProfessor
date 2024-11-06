@@ -30,7 +30,11 @@ class ItemDAO {
     }
     
     public function update(Item $obj) {
-        $query = "UPDATE item SET nome = '$obj->nome', validade = '$obj->validade', valor = $obj->valor, idingredientes = $obj->idingredientes WHERE iditem = $obj->iditem";
+        $query = "UPDATE item SET nome = '$obj->nome',"
+                . " validade = '$obj->validade', "
+                . "valor = $obj->valor, "
+                . "idingredientes = $obj->idingredientes "
+                . "WHERE iditem = $obj->iditem";
         
         $conn = DB::getInstancia()->prepare($query);
                 

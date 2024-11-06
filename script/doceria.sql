@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 31/10/2024 às 01:48
+-- Tempo de geração: 06/11/2024 às 01:11
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -20,7 +20,7 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `doceria`
 --
-
+CREATE DATABASE IF NOT EXISTS DOCERIA;
 -- --------------------------------------------------------
 
 --
@@ -58,6 +58,33 @@ CREATE TABLE `item` (
   `valor` decimal(10,2) NOT NULL,
   `idingredientes` int(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `item`
+--
+
+INSERT INTO `item` (`iditem`, `nome`, `validade`, `valor`, `idingredientes`) VALUES
+(1, 'Toddy', '2024-11-20', 7.50, 1),
+(2, 'Claybom', '2024-11-22', 4.79, 5);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `itemreceita`
+--
+
+CREATE TABLE `itemreceita` (
+  `iditem` int(11) NOT NULL,
+  `idreceita` int(11) NOT NULL,
+  `quantidade` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `itemreceita`
+--
+
+INSERT INTO `itemreceita` (`iditem`, `idreceita`, `quantidade`) VALUES
+(2, 4, 1);
 
 -- --------------------------------------------------------
 
@@ -115,6 +142,13 @@ ALTER TABLE `item`
   ADD KEY `FK_RECEITA_INGREDIENTES` (`idingredientes`);
 
 --
+-- Índices de tabela `itemreceita`
+--
+ALTER TABLE `itemreceita`
+  ADD PRIMARY KEY (`iditem`,`idreceita`),
+  ADD KEY `FK_item_rec_rec` (`idreceita`);
+
+--
 -- Índices de tabela `receita`
 --
 ALTER TABLE `receita`
@@ -140,7 +174,7 @@ ALTER TABLE `ingredientes`
 -- AUTO_INCREMENT de tabela `item`
 --
 ALTER TABLE `item`
-  MODIFY `iditem` int(15) NOT NULL AUTO_INCREMENT;
+  MODIFY `iditem` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `receita`
@@ -163,6 +197,13 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `item`
   ADD CONSTRAINT `FK_RECEITA_INGREDIENTES` FOREIGN KEY (`idingredientes`) REFERENCES `ingredientes` (`idingredientes`);
+
+--
+-- Restrições para tabelas `itemreceita`
+--
+ALTER TABLE `itemreceita`
+  ADD CONSTRAINT `FK_item_rec_item` FOREIGN KEY (`iditem`) REFERENCES `item` (`iditem`),
+  ADD CONSTRAINT `FK_item_rec_rec` FOREIGN KEY (`idreceita`) REFERENCES `receita` (`idreceita`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

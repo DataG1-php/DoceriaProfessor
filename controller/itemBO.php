@@ -60,7 +60,7 @@ if (isset($_REQUEST['acao'])){
                 $objeto->valor = $_POST['valor'];
                 $objeto->iditem = $_POST['iditem'];
                 $objeto->idingredientes = $_POST['idingredientes'];
-                //echo $dao->update($objeto);
+                
                     if($dao->update($objeto)){
                     ?>
                         <script type="text/javascript">

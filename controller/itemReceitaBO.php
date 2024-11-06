@@ -19,9 +19,7 @@ if (isset($_REQUEST['acao'])){
                 $objeto->idreceita = $_POST['cbxreceita'];
                 $objeto->iditem = $_POST['cbxitem'];
                 $objeto->quantidade = $_POST['quantidade'];
-
-                var_dump($objeto);
-                
+             
                 if($dao->insert($objeto)){
                     ?>
                     <script type="text/javascript">

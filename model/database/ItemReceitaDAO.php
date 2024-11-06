@@ -25,7 +25,9 @@ class ItemReceitaDAO {
     }
     
     public function update(ItemReceita $obj) {
-        $query = "UPDATE itemreceita set iditem = :piditem, quantidade = :pquantidade where idreceita = :pidreceita";
+        $query = "UPDATE itemreceita set iditem = :piditem, "
+                . "quantidade = :pquantidade "
+                . "where idreceita = :pidreceita";
         $conn = DB::getInstancia()->prepare($query);
         $conn->execute(array(':piditem'=>$obj->iditem,
                              ':pidreceita'=>$obj->idreceita,
@@ -34,7 +36,8 @@ class ItemReceitaDAO {
     }
     
     public function delete($iditem,$idreceita) {
-        $query = "DELETE from itemreceita where iditem = :piditem and idreceita = :pidreceita";
+        $query = "DELETE from itemreceita where "
+                . "iditem = :piditem and idreceita = :pidreceita";
         $conn = DB::getInstancia()->prepare($query);
         $conn->execute(array(':piditem'=>$iditem, ':pidreceita'=>$idreceita));
         return $conn->rowcount()>0;
