@@ -26,6 +26,7 @@ class ItemDAO {
                              ':pvalidade'=>$obj->validade,
                              ':pvalor'=>$obj->valor,
                              ':pidingredientes'=>$obj->idingredientes));
+        $idinserido = DB::getInstancia()->lastInsertId(); // retorna a chave primária pai inserida.
         return $conn->rowCount()>0;
     }
     
