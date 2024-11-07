@@ -25,12 +25,11 @@ class Usuario {
                 . "and senha = PASSWORD('$senha')";
         $conn = DB::getInstancia()->query($query);
         $resultado = $conn->fetchAll();
-        
-        if (count($resultado) === 1) {
-            return $resultado;
-        }else{
-            return 0;
-        }
+            if (count($resultado) == 1) { // alterado para apenas usar "=="
+                return $resultado;
+            }else{
+                return 0;
+            }
     }
 }
 ?>

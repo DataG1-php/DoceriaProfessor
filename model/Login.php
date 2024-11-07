@@ -13,9 +13,13 @@ abstract class Login {
     
     public static function verificaLogin($login,$senha){
         $user = new Usuario();
-        $resultado = $user->autenticaUsuario($login, $senha);    
-        $idusuario = $resultado->idusuario;
-        self::criaSessao($idusuario);
+        $resultado = $user->autenticaUsuario($login, $senha);           
+        if (is_array($resultado)){ // Testa se o retorno é um array preenchido
+            $idusuario = $resultado->idusuario;
+            self::criaSessao($idusuario);
+        }else{// se não for, envia para o login
+            header('location: ../view/login.php');
+        }
     }
     
     public static function verificaSessao() {
